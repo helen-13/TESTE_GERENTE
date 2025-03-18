@@ -1,0 +1,1328 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/18/2025 3:34:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HELEN-NOTEBOOK-"
+  DTS:CreatorName="HELEN-NOTEBOOK-\hgfre"
+  DTS:Description="DTS Wizard-generated package"
+  DTS:DTSID="{181B725F-49E8-46C3-A741-58EFD036ED0A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1046"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Untitled"
+  DTS:VersionGUID="{95479644-67B2-4925-99A8-9B383BB11BAC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8341BA6E-958A-4FAB-9D20-B6B3EA40AA57}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=dbDev;Provider=SQLOLEDB;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9AC672E2-759A-4E29-A50F-2B76E8B7E62F}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=(local);Initial Catalog=dbDev;Provider=SQLOLEDB;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Fluxo de Dados 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{34C8F193-BACB-46EB-898F-6C5C365CCC2C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Fluxo de Dados 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino - REMUNERACAO"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[REMUNERACAO]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[CÓDIGO DO ÓRGÃO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CÓDIGO DO ÓRGÃO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[CÓDIGO DO ÓRGÃO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[CÓDIGO DO ÓRGÃO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[ÓRGÃO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ÓRGÃO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[ÓRGÃO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[ÓRGÃO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[MATRÍCULA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MATRÍCULA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[MATRÍCULA]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[MATRÍCULA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[CPF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CPF"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[CPF]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[CPF]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[NOME]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NOME"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[NOME]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[NOME]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[DATA DE ADMISSÃO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA DE ADMISSÃO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[DATA DE ADMISSÃO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[DATA DE ADMISSÃO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[SITUAÇÃO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SITUAÇÃO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[SITUAÇÃO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[SITUAÇÃO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[CARGA HORÁRIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CARGA HORÁRIA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[CARGA HORÁRIA]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[CARGA HORÁRIA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[FUNÇÃO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FUNÇÃO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[FUNÇÃO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[FUNÇÃO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[ANO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ANO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[ANO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[ANO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[MÊS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MÊS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[MÊS]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[MÊS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[REMUNERAÇÃO BÁSICA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="REMUNERAÇÃO BÁSICA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[REMUNERAÇÃO BÁSICA]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[REMUNERAÇÃO BÁSICA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[BENEFÍCIOS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BENEFÍCIOS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[BENEFÍCIOS]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[BENEFÍCIOS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[HORA_EXTRA1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HORA_EXTRA1"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[HORA_EXTRA1]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[HORA_EXTRA1]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[COMISSÃO CONSELHEIRO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COMISSÃO CONSELHEIRO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[COMISSÃO CONSELHEIRO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[COMISSÃO CONSELHEIRO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[HORA_EXTRA2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="HORA_EXTRA2"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[HORA_EXTRA2]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[HORA_EXTRA2]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[VERBAS EVENTUAIS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VERBAS EVENTUAIS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[VERBAS EVENTUAIS]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[VERBAS EVENTUAIS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[VERBAS JUDICIAIS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VERBAS JUDICIAIS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[VERBAS JUDICIAIS]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[VERBAS JUDICIAIS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[OUTROS RECEBIMENTOS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OUTROS RECEBIMENTOS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[OUTROS RECEBIMENTOS]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[OUTROS RECEBIMENTOS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[DESCONTOS A MAIOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESCONTOS A MAIOR"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[DESCONTOS A MAIOR]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[DESCONTOS A MAIOR]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[LICENÇA PRÊMIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LICENÇA PRÊMIO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[LICENÇA PRÊMIO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[LICENÇA PRÊMIO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[IRRF]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="IRRF"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[IRRF]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[IRRF]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[SEG  SOCIAL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SEG  SOCIAL"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[SEG  SOCIAL]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[SEG  SOCIAL]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[TETO REDUTOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TETO REDUTOR"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[TETO REDUTOR]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[TETO REDUTOR]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[OUTROS DESCONTOS OBRIGATÓRIOS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OUTROS DESCONTOS OBRIGATÓRIOS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[OUTROS DESCONTOS OBRIGATÓRIOS]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[OUTROS DESCONTOS OBRIGATÓRIOS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[PAGAMENTOS A MAIOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PAGAMENTOS A MAIOR"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[PAGAMENTOS A MAIOR]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[PAGAMENTOS A MAIOR]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[EXPURGO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="EXPURGO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[EXPURGO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[EXPURGO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].Columns[LÍQUIDO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="LÍQUIDO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[LÍQUIDO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[LÍQUIDO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[CÓDIGO DO ÓRGÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CÓDIGO DO ÓRGÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[ÓRGÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ÓRGÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[MATRÍCULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MATRÍCULA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NOME" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[DATA DE ADMISSÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA DE ADMISSÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[SITUAÇÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SITUAÇÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[CARGA HORÁRIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CARGA HORÁRIA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[FUNÇÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FUNÇÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[ANO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ANO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[MÊS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MÊS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[REMUNERAÇÃO BÁSICA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="REMUNERAÇÃO BÁSICA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[BENEFÍCIOS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BENEFÍCIOS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[HORA_EXTRA1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HORA_EXTRA1" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[COMISSÃO CONSELHEIRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COMISSÃO CONSELHEIRO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[HORA_EXTRA2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HORA_EXTRA2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[VERBAS EVENTUAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VERBAS EVENTUAIS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[VERBAS JUDICIAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VERBAS JUDICIAIS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[OUTROS RECEBIMENTOS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OUTROS RECEBIMENTOS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[DESCONTOS A MAIOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESCONTOS A MAIOR" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[LICENÇA PRÊMIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LICENÇA PRÊMIO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[IRRF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="IRRF" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[SEG  SOCIAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SEG  SOCIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[TETO REDUTOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TETO REDUTOR" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[OUTROS DESCONTOS OBRIGATÓRIOS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OUTROS DESCONTOS OBRIGATÓRIOS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[PAGAMENTOS A MAIOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PAGAMENTOS A MAIOR" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[EXPURGO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EXPURGO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input].ExternalColumns[LÍQUIDO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LÍQUIDO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Origem - REMUNERACAO"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[REMUNERACAO]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[CÓDIGO DO ÓRGÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[CÓDIGO DO ÓRGÃO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[CÓDIGO DO ÓRGÃO]"
+                      name="CÓDIGO DO ÓRGÃO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[ÓRGÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[ÓRGÃO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[ÓRGÃO]"
+                      name="ÓRGÃO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[MATRÍCULA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[MATRÍCULA]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[MATRÍCULA]"
+                      name="MATRÍCULA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[CPF]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[CPF]"
+                      name="CPF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[NOME]"
+                      name="NOME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[DATA DE ADMISSÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA DE ADMISSÃO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[DATA DE ADMISSÃO]"
+                      name="DATA DE ADMISSÃO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[SITUAÇÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[SITUAÇÃO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[SITUAÇÃO]"
+                      name="SITUAÇÃO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[CARGA HORÁRIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[CARGA HORÁRIA]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[CARGA HORÁRIA]"
+                      name="CARGA HORÁRIA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[FUNÇÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[FUNÇÃO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[FUNÇÃO]"
+                      name="FUNÇÃO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[ANO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[ANO]"
+                      name="ANO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[MÊS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[MÊS]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[MÊS]"
+                      name="MÊS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[REMUNERAÇÃO BÁSICA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[REMUNERAÇÃO BÁSICA]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[REMUNERAÇÃO BÁSICA]"
+                      name="REMUNERAÇÃO BÁSICA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[BENEFÍCIOS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[BENEFÍCIOS]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[BENEFÍCIOS]"
+                      name="BENEFÍCIOS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[HORA_EXTRA1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[HORA_EXTRA1]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[HORA_EXTRA1]"
+                      name="HORA_EXTRA1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[COMISSÃO CONSELHEIRO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[COMISSÃO CONSELHEIRO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[COMISSÃO CONSELHEIRO]"
+                      name="COMISSÃO CONSELHEIRO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[HORA_EXTRA2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[HORA_EXTRA2]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[HORA_EXTRA2]"
+                      name="HORA_EXTRA2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[VERBAS EVENTUAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[VERBAS EVENTUAIS]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[VERBAS EVENTUAIS]"
+                      name="VERBAS EVENTUAIS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[VERBAS JUDICIAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[VERBAS JUDICIAIS]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[VERBAS JUDICIAIS]"
+                      name="VERBAS JUDICIAIS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[OUTROS RECEBIMENTOS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[OUTROS RECEBIMENTOS]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[OUTROS RECEBIMENTOS]"
+                      name="OUTROS RECEBIMENTOS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[DESCONTOS A MAIOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[DESCONTOS A MAIOR]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[DESCONTOS A MAIOR]"
+                      name="DESCONTOS A MAIOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[LICENÇA PRÊMIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[LICENÇA PRÊMIO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[LICENÇA PRÊMIO]"
+                      name="LICENÇA PRÊMIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[IRRF]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[IRRF]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[IRRF]"
+                      name="IRRF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[SEG  SOCIAL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[SEG  SOCIAL]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[SEG  SOCIAL]"
+                      name="SEG  SOCIAL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[TETO REDUTOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[TETO REDUTOR]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[TETO REDUTOR]"
+                      name="TETO REDUTOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[OUTROS DESCONTOS OBRIGATÓRIOS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[OUTROS DESCONTOS OBRIGATÓRIOS]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[OUTROS DESCONTOS OBRIGATÓRIOS]"
+                      name="OUTROS DESCONTOS OBRIGATÓRIOS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[PAGAMENTOS A MAIOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[PAGAMENTOS A MAIOR]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[PAGAMENTOS A MAIOR]"
+                      name="PAGAMENTOS A MAIOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[EXPURGO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[EXPURGO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[EXPURGO]"
+                      name="EXPURGO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[LÍQUIDO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[LÍQUIDO]"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].Columns[LÍQUIDO]"
+                      name="LÍQUIDO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[CÓDIGO DO ÓRGÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CÓDIGO DO ÓRGÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[ÓRGÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ÓRGÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[MATRÍCULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MATRÍCULA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NOME" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[DATA DE ADMISSÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA DE ADMISSÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[SITUAÇÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SITUAÇÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[CARGA HORÁRIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CARGA HORÁRIA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[FUNÇÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FUNÇÃO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[ANO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ANO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[MÊS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MÊS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[REMUNERAÇÃO BÁSICA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="REMUNERAÇÃO BÁSICA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[BENEFÍCIOS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BENEFÍCIOS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[HORA_EXTRA1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HORA_EXTRA1" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[COMISSÃO CONSELHEIRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COMISSÃO CONSELHEIRO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[HORA_EXTRA2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="HORA_EXTRA2" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[VERBAS EVENTUAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VERBAS EVENTUAIS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[VERBAS JUDICIAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VERBAS JUDICIAIS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[OUTROS RECEBIMENTOS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OUTROS RECEBIMENTOS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[DESCONTOS A MAIOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESCONTOS A MAIOR" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[LICENÇA PRÊMIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LICENÇA PRÊMIO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[IRRF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="IRRF" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[SEG  SOCIAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SEG  SOCIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[TETO REDUTOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TETO REDUTOR" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[OUTROS DESCONTOS OBRIGATÓRIOS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OUTROS DESCONTOS OBRIGATÓRIOS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[PAGAMENTOS A MAIOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PAGAMENTOS A MAIOR" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[EXPURGO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="EXPURGO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB].ExternalColumns[LÍQUIDO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LÍQUIDO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[CÓDIGO DO ÓRGÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[CÓDIGO DO ÓRGÃO]"
+                      name="CÓDIGO DO ÓRGÃO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[ÓRGÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[ÓRGÃO]"
+                      name="ÓRGÃO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[MATRÍCULA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[MATRÍCULA]"
+                      name="MATRÍCULA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[CPF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[CPF]"
+                      name="CPF" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[NOME]"
+                      name="NOME" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA DE ADMISSÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[DATA DE ADMISSÃO]"
+                      name="DATA DE ADMISSÃO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[SITUAÇÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[SITUAÇÃO]"
+                      name="SITUAÇÃO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[CARGA HORÁRIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[CARGA HORÁRIA]"
+                      name="CARGA HORÁRIA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[FUNÇÃO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[FUNÇÃO]"
+                      name="FUNÇÃO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[ANO]"
+                      name="ANO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[MÊS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[MÊS]"
+                      name="MÊS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[REMUNERAÇÃO BÁSICA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[REMUNERAÇÃO BÁSICA]"
+                      name="REMUNERAÇÃO BÁSICA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[BENEFÍCIOS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[BENEFÍCIOS]"
+                      name="BENEFÍCIOS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[HORA_EXTRA1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[HORA_EXTRA1]"
+                      name="HORA_EXTRA1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[COMISSÃO CONSELHEIRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[COMISSÃO CONSELHEIRO]"
+                      name="COMISSÃO CONSELHEIRO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[HORA_EXTRA2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[HORA_EXTRA2]"
+                      name="HORA_EXTRA2" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[VERBAS EVENTUAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[VERBAS EVENTUAIS]"
+                      name="VERBAS EVENTUAIS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[VERBAS JUDICIAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[VERBAS JUDICIAIS]"
+                      name="VERBAS JUDICIAIS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[OUTROS RECEBIMENTOS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[OUTROS RECEBIMENTOS]"
+                      name="OUTROS RECEBIMENTOS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[DESCONTOS A MAIOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[DESCONTOS A MAIOR]"
+                      name="DESCONTOS A MAIOR" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[LICENÇA PRÊMIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[LICENÇA PRÊMIO]"
+                      name="LICENÇA PRÊMIO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[IRRF]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[IRRF]"
+                      name="IRRF" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[SEG  SOCIAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[SEG  SOCIAL]"
+                      name="SEG  SOCIAL" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[TETO REDUTOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[TETO REDUTOR]"
+                      name="TETO REDUTOR" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[OUTROS DESCONTOS OBRIGATÓRIOS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[OUTROS DESCONTOS OBRIGATÓRIOS]"
+                      name="OUTROS DESCONTOS OBRIGATÓRIOS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[PAGAMENTOS A MAIOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[PAGAMENTOS A MAIOR]"
+                      name="PAGAMENTOS A MAIOR" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[EXPURGO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[EXPURGO]"
+                      name="EXPURGO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[LÍQUIDO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[LÍQUIDO]"
+                      name="LÍQUIDO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarefa Fluxo de Dados 1.Paths[Saída de Origem OLE DB]"
+              endId="Package\Tarefa Fluxo de Dados 1\Destino - REMUNERACAO.Inputs[Destination Input]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Tarefa Fluxo de Dados 1\Origem - REMUNERACAO.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>
