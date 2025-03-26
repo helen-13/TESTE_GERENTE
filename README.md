@@ -20,7 +20,7 @@ teste cgdf
 4.2.	A conexão com o banco de dados deve ser feita por uma conexão de Projeto;
 4.3.	A conexão com o arquivo deve ser feita como conexão de Pacote e presente apenas no pacote que processará o arquivo e carregará a tabela TB_REMUNERACAO;
 4.4.	Todas as colunas de texto devem ter os espaços removidos do início e fim da string e devem estar em caixa alta (upper case);
-5.	Relatórios (SQLs)
+5.	Relatórios (SQLs): https://colab.research.google.com/drive/1gYPBO5hu9HSiSygCqgEK2zdf0-yTG_Nn?usp=sharing
 5.1.	Qual o número total de servidores por empresa?
 5.2.	Qual o maior salário dentre os servidores da SERVICO DE LIMPEZA URBANA - SLU?
 5.3.	Qual o número de servidores admitidos no ano de 2019?
